@@ -10,5 +10,8 @@
       "my-app/*": ["app/*"],
       "*": ["types/*"]
     }
+  },
+    "glint": {
+    "environment": ["ember-loose"]
   }
 }
