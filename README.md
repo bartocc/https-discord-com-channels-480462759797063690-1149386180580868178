@@ -4,7 +4,7 @@ for [this Discord thread](https://discord.com/channels/480462759797063690/114938
 
 ## How to reproduce
 
-Running `yarn workspace my-addon glint` does not typecheck…
+Running `yarn workspace my-app glint` does not typecheck…
 
 ```txt
 app/templates/application.hbs:6:3 - error TS2349: This expression is not callable.
