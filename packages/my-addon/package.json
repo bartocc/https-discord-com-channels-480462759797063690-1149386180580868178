@@ -1,0 +1,127 @@
+{
+  "name": "my-addon",
+  "version": "0.0.0",
+  "description": "The default blueprint for Embroider v2 addons.",
+  "keywords": [
+    "ember-addon"
+  ],
+  "repository": "",
+  "license": "MIT",
+  "author": "",
+  "files": [
+    "addon-main.cjs",
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup --config",
+    "lint": "concurrently 'npm:lint:*(!fix)' --names 'lint:'",
+    "lint:fix": "concurrently 'npm:lint:*:fix' --names 'fix:'",
+    "lint:hbs": "ember-template-lint . --no-error-on-unmatched-pattern",
+    "lint:js": "eslint . --cache",
+    "lint:hbs:fix": "ember-template-lint . --fix --no-error-on-unmatched-pattern",
+    "lint:js:fix": "eslint . --fix",
+    "lint:types": "glint",
+    "start": "rollup --config --watch",
+    "test": "echo 'A v2 addon does not have tests, run tests in test-app'",
+    "prepack": "rollup --config"
+  },
+  "dependencies": {
+    "@embroider/addon-shim": "^1.0.0",
+    "ember-headless-form": "1.0.0-beta.3",
+    "ember-headless-form-changeset": "^1.0.0-beta.1"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/plugin-proposal-decorators": "^7.20.13",
+    "@babel/preset-typescript": "^7.18.6",
+    "@embroider/addon-dev": "^3.0.0",
+    "@glint/core": "^1.0.2",
+    "@glint/environment-ember-loose": "^1.0.2",
+    "@glint/environment-ember-template-imports": "^1.0.2",
+    "@glint/template": "^1.0.2",
+    "@tsconfig/ember": "^2.0.0",
+    "@types/ember": "^4.0.0",
+    "@types/ember__application": "^4.0.0",
+    "@types/ember__array": "^4.0.0",
+    "@types/ember__component": "^4.0.0",
+    "@types/ember__controller": "^4.0.0",
+    "@types/ember__debug": "^4.0.0",
+    "@types/ember__engine": "^4.0.0",
+    "@types/ember__error": "^4.0.0",
+    "@types/ember__object": "^4.0.0",
+    "@types/ember__polyfills": "^4.0.0",
+    "@types/ember__routing": "^4.0.0",
+    "@types/ember__runloop": "^4.0.0",
+    "@types/ember__service": "^4.0.0",
+    "@types/ember__string": "^3.16.0",
+    "@types/ember__template": "^4.0.0",
+    "@types/ember__test": "^4.0.0",
+    "@types/ember__utils": "^4.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.30.5",
+    "@typescript-eslint/parser": "^5.30.5",
+    "ember-source": "^5.2.0",
+    "ember-template-lint": "^5.7.3",
+    "eslint": "^8.33.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-ember": "^11.6.0",
+    "eslint-plugin-n": "^16.0.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^3.0.3",
+    "prettier-plugin-ember-template-tag": "^1.1.0",
+    "rollup": "^3.21.8",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-glimmer-template-tag": "^0.4.1",
+    "rollup-plugin-ts": "^3.3.0",
+    "typescript": "^5.0.4"
+  },
+  "peerDependencies": {
+    "ember-source": "^4.8.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "ember": {
+    "edition": "octane"
+  },
+  "ember-addon": {
+    "version": 2,
+    "type": "addon",
+    "main": "addon-main.cjs",
+    "app-js": {
+      "./components/wr/button.js": "./dist/_app_/components/wr/button.js",
+      "./components/wr/details.js": "./dist/_app_/components/wr/details.js",
+      "./components/wr/form/controls/checkbox.js": "./dist/_app_/components/wr/form/controls/checkbox.js",
+      "./components/wr/form/controls/input.js": "./dist/_app_/components/wr/form/controls/input.js",
+      "./components/wr/form/controls/radio.js": "./dist/_app_/components/wr/form/controls/radio.js",
+      "./components/wr/form/controls/select.js": "./dist/_app_/components/wr/form/controls/select.js",
+      "./components/wr/form/controls/textarea.js": "./dist/_app_/components/wr/form/controls/textarea.js",
+      "./components/wr/form/field.js": "./dist/_app_/components/wr/form/field.js",
+      "./components/wr/form/fields/input-row.js": "./dist/_app_/components/wr/form/fields/input-row.js",
+      "./components/wr/form/fields/radio-group.js": "./dist/_app_/components/wr/form/fields/radio-group.js",
+      "./components/wr/form/fields/radio.js": "./dist/_app_/components/wr/form/fields/radio.js",
+      "./components/wr/form/fields/row.js": "./dist/_app_/components/wr/form/fields/row.js",
+      "./components/wr/form/row.js": "./dist/_app_/components/wr/form/row.js",
+      "./components/wr/form/row2.js": "./dist/_app_/components/wr/form/row2.js",
+      "./components/wr/header.js": "./dist/_app_/components/wr/header.js",
+      "./components/wr/icons/arrow.js": "./dist/_app_/components/wr/icons/arrow.js",
+      "./components/wr/icons/close.js": "./dist/_app_/components/wr/icons/close.js",
+      "./components/wr/icons/title-arrow.js": "./dist/_app_/components/wr/icons/title-arrow.js",
+      "./components/wr/icons/vitale.js": "./dist/_app_/components/wr/icons/vitale.js"
+    }
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "default": "./dist/*.js"
+    },
+    "./addon-main.js": "./addon-main.cjs"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "dist/*"
+      ]
+    }
+  }
+}
