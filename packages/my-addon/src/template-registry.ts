@@ -6,5 +6,5 @@
 import type FooComponent from './components/foo';
 
 export default interface Registry {
-  'Foo': typeof FooComponent;
+  Foo: typeof FooComponent;
 }
